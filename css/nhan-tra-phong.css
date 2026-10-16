@@ -1,0 +1,555 @@
+/* ===== NHẬN / TRẢ PHÒNG ===== */
+
+.main-content {
+    min-width: 0;
+    flex: 1;
+}
+
+.topbar {
+    min-height: 76px;
+    padding: 16px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: #ffffff;
+    border-bottom: 1px solid #e8edf4;
+}
+
+.topbar h2 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.topbar p {
+    margin: 5px 0 0;
+    color: #718096;
+    font-size: 13px;
+}
+
+.topbar-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.today-date {
+    color: #64748b;
+    font-size: 13px;
+}
+
+.topbar-avatar,
+.staff-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.topbar-avatar {
+    width: 38px;
+    height: 38px;
+    color: #ffffff;
+    background: #123b68;
+}
+
+.page-content {
+    padding: 26px 28px;
+    background: #f3f6fa;
+    min-height: calc(100vh - 76px);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    padding: 21px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(25, 42, 70, 0.025);
+}
+
+.stat-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.stat-icon {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    font-size: 21px;
+    font-weight: 600;
+}
+
+.stat-icon.blue {
+    color: #2563eb;
+    background: #eff6ff;
+}
+
+.stat-icon.green {
+    color: #15803d;
+    background: #f0fdf4;
+}
+
+.stat-icon.orange {
+    color: #c2410c;
+    background: #fff7ed;
+}
+
+.stat-card h3 {
+    margin: 15px 0 5px;
+    color: #172b4d;
+    font-size: 29px;
+    font-weight: 700;
+}
+
+.stat-card p {
+    margin: 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.content-card {
+    padding: 22px;
+    background: #ffffff;
+    border: 1px solid #e8edf4;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(25, 42, 70, 0.025);
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.section-heading h3 {
+    margin: 0;
+    color: #172b4d;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.section-heading p {
+    margin: 6px 0 0;
+    color: #94a3b8;
+    font-size: 12px;
+}
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.search-box {
+    min-width: 200px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 13px;
+    border: 1px solid #dfe6ef;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.search-box span {
+    color: #94a3b8;
+    font-size: 22px;
+}
+
+.search-box input {
+    width: 100%;
+    height: 42px;
+    border: none;
+    outline: none;
+    color: #172b4d;
+    font-family: inherit;
+    font-size: 12px;
+}
+
+.search-box:focus-within {
+    border-color: #123b68;
+    box-shadow: 0 0 0 3px rgba(18, 59, 104, 0.07);
+}
+
+.filter-select {
+    width: 190px;
+    height: 44px;
+    padding: 0 12px;
+    color: #475569;
+    border: 1px solid #dfe6ef;
+    border-radius: 8px;
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 12px;
+    outline: none;
+}
+
+.btn-refresh {
+    height: 44px;
+    padding: 0 15px;
+    color: #123b68;
+    background: #ffffff;
+    border: 1px solid #dfe6ef;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.btn-refresh:hover {
+    background: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+.booking-table {
+    min-width: 850px;
+    margin: 0;
+}
+
+.booking-table thead th {
+    padding: 14px 12px;
+    color: #8492a6;
+    background: #f8fafc;
+    border-bottom: 1px solid #e8edf4;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.35px;
+    white-space: nowrap;
+}
+
+.booking-table tbody td {
+    padding: 15px 12px;
+    color: #475569;
+    border-bottom: 1px solid #edf1f6;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.booking-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.customer-cell {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.customer-avatar {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    color: #123b68;
+    background: #eaf2fb;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.customer-name {
+    color: #172b4d;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.customer-phone {
+    margin-top: 4px;
+    color: #94a3b8;
+    font-size: 10px;
+}
+
+.room-number {
+    display: inline-block;
+    min-width: 48px;
+    padding: 6px 9px;
+    color: #123b68;
+    background: #eff6ff;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.status-badge {
+    display: inline-block;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.status-waiting {
+    color: #1d4ed8;
+    background: #eff6ff;
+}
+
+.status-staying {
+    color: #15803d;
+    background: #f0fdf4;
+}
+
+.status-checkout {
+    color: #b45309;
+    background: #fff7ed;
+}
+
+.status-completed {
+    color: #64748b;
+    background: #f1f5f9;
+}
+
+.action-button {
+    padding: 7px 11px;
+    border: none;
+    border-radius: 7px;
+    font-family: inherit;
+    font-size: 11px;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.action-checkin {
+    color: #ffffff;
+    background: #123b68;
+}
+
+.action-checkin:hover {
+    background: #0b2746;
+}
+
+.action-checkout {
+    color: #ffffff;
+    background: #16a34a;
+}
+
+.action-checkout:hover {
+    background: #15803d;
+}
+
+.action-done {
+    color: #64748b;
+    background: #f1f5f9;
+    cursor: default;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 16px;
+    border-top: 1px solid #edf1f6;
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+.notice-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 17px 19px;
+    background: #edf5ff;
+    border: 1px solid #d9e9ff;
+    border-radius: 10px;
+}
+
+.notice-icon {
+    color: #2563eb;
+    font-size: 19px;
+}
+
+.notice-box strong {
+    color: #123b68;
+    font-size: 12px;
+}
+
+.notice-box p {
+    margin: 5px 0 0;
+    color: #526b88;
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+.custom-modal {
+    border: none;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.custom-modal .modal-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #edf1f6;
+}
+
+.custom-modal .modal-title {
+    color: #172b4d;
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.custom-modal .modal-body {
+    padding: 22px;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.modal-customer {
+    margin-top: 15px;
+    padding: 13px;
+    color: #123b68;
+    background: #f3f6fa;
+    border-radius: 8px;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.custom-modal .modal-footer {
+    padding: 15px 22px;
+    border-top: 1px solid #edf1f6;
+}
+
+.btn-cancel,
+.btn-confirm {
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.btn-cancel {
+    color: #475569;
+    background: #ffffff;
+    border: 1px solid #dfe6ef;
+}
+
+.btn-confirm {
+    color: #ffffff;
+    background: #123b68;
+    border: 1px solid #123b68;
+}
+
+.btn-confirm:hover {
+    background: #0b2746;
+}
+
+.toast-message {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 1100;
+    max-width: calc(100vw - 40px);
+    padding: 14px 20px;
+    color: #ffffff;
+    background: #123b68;
+    border-radius: 9px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.25s;
+}
+
+.toast-message.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.empty-row {
+    padding: 35px !important;
+    color: #94a3b8 !important;
+    text-align: center;
+}
+
+@media (max-width: 1100px) {
+    .page-content {
+        padding: 20px;
+    }
+
+    .topbar {
+        padding: 16px 20px;
+    }
+
+    .filter-bar {
+        flex-wrap: wrap;
+    }
+
+    .search-box {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .page-content {
+        padding: 15px;
+    }
+
+    .content-card {
+        padding: 15px;
+    }
+
+    .topbar {
+        padding: 14px 15px;
+    }
+
+    .topbar h2 {
+        font-size: 18px;
+    }
+
+    .today-date {
+        display: none;
+    }
+
+    .filter-select {
+        flex: 1;
+        width: auto;
+        min-width: 150px;
+    }
+}
+/* Đồng bộ màu logo StayFlow với trang Tổng quan */
+.sidebar .brand h5 {
+    color: #ffffff !important;
+}
+
+.sidebar .brand span {
+    color: #d8e3ef !important;
+    opacity: 0.75;
+}
+
+.sidebar .brand-icon {
+    background: #ffffff !important;
+    color: #123b68 !important;
+}

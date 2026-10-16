@@ -1,0 +1,510 @@
+
+/* ===== THỐNG KÊ HÓA ĐƠN ===== */
+.invoice-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 24px;
+}
+
+.invoice-stat-card {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+    padding: 20px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.invoice-stat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.invoice-stat-icon.blue {
+    color: #2563eb;
+    background: #eaf2ff;
+}
+
+.invoice-stat-icon.green {
+    color: #16845b;
+    background: #e6f7ef;
+}
+
+.invoice-stat-icon.orange {
+    color: #c47a10;
+    background: #fff4df;
+}
+
+.invoice-stat-icon.purple {
+    color: #7856c9;
+    background: #f0eaff;
+}
+
+.invoice-stat-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.invoice-stat-card h3 {
+    margin: 5px 0 0;
+    color: var(--text);
+    font-size: 23px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+/* ===== DANH SÁCH HÓA ĐƠN ===== */
+.invoice-panel {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.invoice-panel-heading {
+    padding: 22px 24px 16px;
+}
+
+.invoice-panel-heading h2 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.invoice-panel-heading p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.invoice-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 24px 20px;
+}
+
+.invoice-search {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    min-width: 180px;
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.invoice-search span {
+    margin-right: 9px;
+    color: var(--muted);
+    font-size: 22px;
+}
+
+.invoice-search input {
+    width: 100%;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    color: var(--text);
+    font: inherit;
+    font-size: 13px;
+}
+
+.invoice-toolbar .form-select {
+    width: auto;
+    min-width: 155px;
+    height: 42px;
+    border-color: var(--border);
+    font-size: 13px;
+}
+
+.invoice-table {
+    margin: 0;
+    white-space: nowrap;
+}
+
+.invoice-table thead th {
+    padding: 14px 15px;
+    color: #65738a;
+    background: #f7f9fc;
+    border-bottom: 1px solid var(--border);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.invoice-table tbody td {
+    padding: 15px;
+    border-bottom: 1px solid #edf0f5;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.invoice-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.invoice-table tbody tr:hover {
+    background: #fafcff;
+}
+
+.invoice-code {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.invoice-customer strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.invoice-customer small {
+    display: block;
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.invoice-amount {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.invoice-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.invoice-status::before {
+    width: 6px;
+    height: 6px;
+    content: "";
+    border-radius: 50%;
+    background: currentColor;
+}
+
+.invoice-status.paid {
+    color: #16845b;
+    background: #e6f7ef;
+}
+
+.invoice-status.unpaid {
+    color: #9a5a15;
+    background: #fff2df;
+}
+
+.invoice-actions {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.invoice-action {
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: #fff;
+    color: var(--text);
+    font-size: 12px;
+}
+
+.invoice-action:hover {
+    color: var(--primary);
+    background: #f0f5fc;
+}
+
+.invoice-action.delete:hover {
+    color: #dc3545;
+    background: #fff0f0;
+}
+
+.invoice-empty {
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.invoice-empty[hidden] {
+    display: none !important;
+}
+
+.invoice-empty > div {
+    color: #9aa8ba;
+    font-size: 35px;
+}
+
+.invoice-empty h3 {
+    margin: 10px 0 6px;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.invoice-empty p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.invoice-table-footer {
+    padding: 16px 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.invoice-note {
+    padding: 22px 0 5px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ===== FORM THÊM / SỬA ===== */
+#modalHoaDon .modal-content,
+#modalChiTietHoaDon .modal-content {
+    overflow: hidden;
+    border: 0;
+    border-radius: 14px;
+}
+
+#modalHoaDon .modal-header,
+#modalChiTietHoaDon .modal-header {
+    padding: 22px 24px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+#modalHoaDon .modal-title,
+#modalChiTietHoaDon .modal-title {
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 700;
+}
+
+#modalHoaDon .modal-subtitle,
+#modalChiTietHoaDon .modal-subtitle {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+#modalHoaDon .modal-body,
+#modalChiTietHoaDon .modal-body {
+    padding: 22px 24px;
+}
+
+#modalHoaDon .form-label {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#modalHoaDon .form-control,
+#modalHoaDon .form-select {
+    min-height: 42px;
+    border-color: var(--border);
+    font-size: 13px;
+}
+
+#modalHoaDon textarea.form-control {
+    min-height: auto;
+}
+
+#modalHoaDon .form-control:focus,
+#modalHoaDon .form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgb(18 59 104 / 10%);
+}
+
+#modalHoaDon .modal-footer,
+#modalChiTietHoaDon .modal-footer {
+    padding: 15px 24px;
+    border-top: 1px solid var(--border);
+}
+
+/* ===== CHI TIẾT HÓA ĐƠN ===== */
+.invoice-detail {
+    color: var(--text);
+}
+
+.invoice-detail-header {
+    margin-bottom: 18px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed var(--border);
+}
+
+.invoice-detail-header h3 {
+    margin: 0 0 6px;
+    color: var(--primary);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.invoice-detail-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.invoice-detail-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid #edf0f5;
+    font-size: 13px;
+}
+
+.invoice-detail-row span:first-child {
+    color: var(--muted);
+}
+
+.invoice-detail-row strong {
+    text-align: right;
+    overflow-wrap: anywhere;
+}
+
+.invoice-detail-total {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 14px;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f0f5fc;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.invoice-detail-note {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #f7f9fc;
+    font-size: 12px;
+    overflow-wrap: anywhere;
+}
+
+.invoice-detail-note strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1250px) {
+    .invoice-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .invoice-toolbar {
+        flex-wrap: wrap;
+    }
+
+    .invoice-search {
+        flex-basis: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .invoice-stats {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .invoice-stat-card {
+        padding: 15px;
+    }
+
+    .invoice-toolbar {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .invoice-toolbar .form-select {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .invoice-panel-heading {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    #modalHoaDon .modal-header,
+    #modalChiTietHoaDon .modal-header,
+    #modalHoaDon .modal-body,
+    #modalChiTietHoaDon .modal-body {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+}
+
+/* ===== CHẾ ĐỘ IN ===== */
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+
+    #vungInHoaDon,
+    #vungInHoaDon * {
+        visibility: visible !important;
+    }
+
+    #vungInHoaDon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 25px;
+        background: #fff;
+        color: #000;
+    }
+}
+/* Đồng bộ nút chính với giao diện StayFlow */
+.btn-primary-custom {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 10px 14px;
+    color: #ffffff;
+    background: #123b68;
+    border: 1px solid #123b68;
+    border-radius: 8px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-primary-custom:hover {
+    color: #ffffff;
+    background: #0b2746;
+    border-color: #0b2746;
+}
+
+.btn-primary-custom:focus-visible {
+    outline: 3px solid rgba(18, 59, 104, 0.2);
+    outline-offset: 2px;
+}

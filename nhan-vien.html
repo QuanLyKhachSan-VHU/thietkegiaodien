@@ -1,0 +1,232 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nhân viên | StayFlow</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/nhan-vien.css">
+</head>
+<body>
+<div class="app-layout">
+
+    <!-- THANH MENU -->
+<aside class="sidebar">
+   
+<div class="brand">
+    <div class="brand-icon">
+        <img src="images/stayflow-logo.png" alt="StayFlow Logo">
+    </div>
+
+    <div class="brand-info">
+        <h5 class="brand-name">
+            <span class="brand-stay">Stay</span><span class="brand-flow">Flow</span>
+        </h5>
+        <span class="brand-subtitle">QUẢN LÝ KHÁCH SẠN</span>
+    </div>
+</div>
+
+
+        <div class="menu-label">MENU CHÍNH</div>
+        <nav class="menu">
+            <a href="tong-quan.html" class="menu-item"><span class="menu-icon">▦</span><span>Tổng quan</span></a>
+            <a href="quan-ly-phong.html" class="menu-item"><span class="menu-icon">▤</span><span>Quản lý phòng</span></a>
+            <a href="khach-hang.html" class="menu-item"><span class="menu-icon">♙</span><span>Khách hàng</span></a>
+            <a href="dat-phong.html" class="menu-item"><span class="menu-icon">▣</span><span>Đặt phòng</span></a>
+            <a href="nhan-tra-phong.html" class="menu-item"><span class="menu-icon">⇄</span><span>Nhận / Trả phòng</span></a>
+            <a href="dich-vu.html" class="menu-item"><span class="menu-icon">◇</span><span>Dịch vụ</span></a>
+            <a href="nhan-vien.html" class="menu-item active"><span class="menu-icon">♧</span><span>Nhân viên</span></a>
+            <a href="hoa-don.html" class="menu-item"><span class="menu-icon">▧</span><span>Hóa đơn</span></a>
+            <a href="doanh-thu.html" class="menu-item"><span class="menu-icon">▥</span><span>Doanh thu</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="support-box">
+                <div class="support-icon">?</div>
+                <div>
+                    <strong>Cần hỗ trợ?</strong>
+                    <p>Liên hệ quản trị viên</p>
+                </div>
+            </div>
+            <div class="sidebar-version">StayFlow · Phiên bản 1.0</div>
+        </div>
+    </aside>
+
+    <main class="main-area">
+        <header class="topbar">
+            <div class="breadcrumb-text">Trang chủ <span>/</span> <strong>Nhân viên</strong></div>
+            <div class="topbar-right">
+                <div class="today-label" id="todayDate"></div>
+                <button class="icon-button" type="button" title="Thông báo">♧<span class="notification-dot"></span></button>
+                <div class="user-profile">
+                    <div class="avatar">QL</div>
+                    <div class="user-info"><strong>Quản lý</strong><span>Quản trị viên</span></div>
+                </div>
+            </div>
+        </header>
+
+        <section class="dashboard-content">
+            <div class="page-heading">
+                <div>
+                    <h1>Quản lý nhân viên</h1>
+                    <p>Quản lý thông tin và trạng thái làm việc của nhân viên khách sạn.</p>
+                </div>
+                <button class="btn-primary-custom" id="btnThemNhanVien" type="button">
+    + Thêm nhân viên
+</button>
+            </div>
+
+            <div class="employee-stats">
+                <div class="employee-stat-card">
+                    <div class="employee-stat-icon blue">♧</div>
+                    <div><span>Tổng nhân viên</span><h3 id="tongNhanVien">0</h3></div>
+                </div>
+                <div class="employee-stat-card">
+                    <div class="employee-stat-icon green">✓</div>
+                    <div><span>Đang làm việc</span><h3 id="nhanVienHoatDong">0</h3></div>
+                </div>
+                <div class="employee-stat-card">
+                    <div class="employee-stat-icon orange">Ⅱ</div>
+                    <div><span>Đã nghỉ</span><h3 id="nhanVienNgung">0</h3></div>
+                </div>
+            </div>
+
+            <div class="employee-panel">
+                <div class="employee-panel-heading">
+                    <div>
+                        <h2>Danh sách nhân viên</h2>
+                        <p>Thông tin nhân sự của khách sạn</p>
+                    </div>
+                </div>
+
+                <div class="employee-toolbar">
+                    <div class="employee-search">
+                        <span>⌕</span>
+                        <input id="timKiemNhanVien" type="search" placeholder="Tìm theo mã, tên, email hoặc số điện thoại...">
+                    </div>
+                    <select id="locTrangThai" class="form-select" aria-label="Lọc trạng thái">
+                        <option value="">Tất cả trạng thái</option>
+                        <option value="Đang làm việc">Đang làm việc</option>
+                        <option value="Đã nghỉ">Đã nghỉ</option>
+                    </select>
+                    <select id="soLuongHienThi" class="form-select" aria-label="Số lượng hiển thị">
+                        <option value="5">5 dòng</option>
+                        <option value="10" selected>10 dòng</option>
+                        <option value="20">20 dòng</option>
+                    </select>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table employee-table align-middle">
+                        <thead>
+                            <tr>
+                                <th>Mã NV</th>
+                                <th>Thông tin nhân viên</th>
+                                <th>Số điện thoại</th>
+                                <th>Chức vụ</th>
+                                <th>Ngày vào làm</th>
+                                <th>Trạng thái</th>
+                                <th>Thao tác</th>
+                            </tr>
+                        </thead>
+                        <tbody id="danhSachNhanVien"></tbody>
+                    </table>
+                </div>
+
+                <div class="employee-empty" id="khongCoDuLieu" hidden>
+                    <div>♧</div>
+                    <h3>Không tìm thấy nhân viên</h3>
+                    <p>Thử thay đổi từ khóa hoặc điều kiện lọc.</p>
+                </div>
+
+                <div class="employee-table-footer">
+                    <span id="tongBanGhi">Hiển thị 0 nhân viên</span>
+                </div>
+            </div>
+
+            <div class="employee-note">StayFlow · Quản lý nhân sự khách sạn</div>
+        </section>
+    </main>
+</div>
+
+<!-- Modal thêm / sửa nhân viên -->
+<div class="modal fade" id="modalNhanVien" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <form id="formNhanVien">
+                <div class="modal-header">
+                    <div>
+                        <h5 class="modal-title" id="tieuDeModal">Thêm nhân viên</h5>
+                        <p class="modal-subtitle">Nhập thông tin nhân viên bên dưới.</p>
+                    </div>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Đóng"></button>
+                </div>
+
+                <div class="modal-body">
+                    <input type="hidden" id="maNhanVien">
+
+                    <div class="mb-3">
+                        <label for="tenNhanVien" class="form-label">Họ và tên *</label>
+                        <input type="text" class="form-control" id="tenNhanVien" maxlength="100" required placeholder="Nhập họ và tên">
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="soDienThoai" class="form-label">Số điện thoại *</label>
+                            <input type="tel" class="form-control" id="soDienThoai" maxlength="15" required pattern="[0-9+ ]{9,15}" placeholder="Nhập số điện thoại">
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="emailNhanVien" class="form-label">Email *</label>
+                            <input type="email" class="form-control" id="emailNhanVien" maxlength="120" required placeholder="example@email.com">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="chucVu" class="form-label">Chức vụ *</label>
+                            <select class="form-select" id="chucVu" required>
+                                <option value="">Chọn chức vụ</option>
+                                <option>Lễ tân</option>
+                                <option>Quản lý</option>
+                                <option>Buồng phòng</option>
+                                <option>Kế toán</option>
+                                <option>Bảo vệ</option>
+                                <option>Kỹ thuật</option>
+                                <option>Phục vụ</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="ngayVaoLam" class="form-label">Ngày vào làm *</label>
+                            <input type="date" class="form-control" id="ngayVaoLam" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="trangThaiNhanVien" class="form-label">Trạng thái *</label>
+                        <select class="form-select" id="trangThaiNhanVien" required>
+                            <option value="Đang làm việc">Đang làm việc</option>
+                            <option value="Đã nghỉ">Đã nghỉ</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">Hủy</button>
+                   <button type="submit" class="btn-primary-custom" id="btnLuuNhanVien">
+    Lưu nhân viên
+</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/nhan-vien.js"></script>
+</body>
+</html>
